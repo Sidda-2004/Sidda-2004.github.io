@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistance Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c9dbc1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+        .container {
+        background-color: rgb(207, 213, 212);
+        width: 50%; /* Setting width of the content container */
+        margin: 0 auto; /* Centering the content container horizontally */
+        border: 5px solid #45a059; /* Adding a solid border around the content */
+        padding: 20px; /* Adding padding around the content */
+        box-sizing: border-box; /* Ensuring padding is included in the total width */
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+        }
+        form {
+            background-color: #a7b4a6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #45a049;
+        }
+        body{
+            background-image: url('bg.jpg'); /* Specify the URL of your image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed position */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>MEDICAL ASSISTANCE</h1>
+
+<form id="loginForm">
+    <h2>Login</h2>
+    <label for="login_id">Login ID:</label>
+    <input type="text" id="login_id" name="login_id" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Login" action="call.html">
+</form>
+</div>
+<script>
+    // Add an event listener for form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the values of the username and password fields
+        var username = document.getElementById('login_id').value;
+        var password = document.getElementById('password').value;
+
+        // Here, you can perform any validation or processing of the form data
+        
+        // Redirect the user to another page
+        window.location.href = 'submit.html'; // Change 'welcome.html' to the desired destination page
+    });
+</script>
+
+</body>
+</html>
