@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        /* Light theme styles */
+        .light-theme {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Dark theme styles */
+        .dark-theme {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        /* Other CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Center elements vertically */
+            
+            background-image: url('bg.jpg'); /* Specify the URL of your image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed position */
+            backdrop-filter: blur(6px);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .settings-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #45a059;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            font-weight: bold;
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="light-theme"> <!-- Default theme is set to light -->
+    <h1>Settings</h1>
+    <div class="success-message" id="successMessage"></div>
+    <form class="settings-form">
+        
+        <div class="form-group">
+            <button type="button" id="changeUsernameButton">Change Username</button>
+        </div>
+        <div class="form-group">
+            <button type="button" id="changePasswordButton">Change Password</button>
+        </div>
+        <div class="form-group">
+            <button type="button" id="changeThemeButton">Change Theme</button>
+        </div>
+       
+    </form>
+
+    <script>
+        document.getElementById('changeUsernameButton').addEventListener('click', function() {
+            window.open('change_username.html', '_self');
+        });
+
+        document.getElementById('changePasswordButton').addEventListener('click', function() {
+            window.open('change_password.html', '_self');
+        });
+
+        document.getElementById('changeThemeButton').addEventListener('click', function() {
+            window.open('change_theme.html', '_self');
+        });
+
+        document.getElementById('saveSettingsButton').addEventListener('click', function() {
+            var selectedTheme = document.getElementById('theme').value;
+
+            localStorage.setItem('theme', selectedTheme);
+
+            applyTheme(selectedTheme);
+
+            document.getElementById('successMessage').innerText = 'Settings saved successfully!';
+        });
+
+        function applyTheme(theme) {
+            document.body.className = theme + '-theme';
+        }
+
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+    </script>
+</body>
+</html>
