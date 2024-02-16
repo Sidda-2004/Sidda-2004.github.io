@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICES</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px 0; /* Padding added to the top and bottom */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .services-container {
+            max-width: 90%;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #45a049;
+            font-size: large;
+
+    
+            background-color: aliceblue;
+            width: 50%; /* Setting width of the content container */
+            margin: 0 auto; /* Centering the content container horizontally */
+            border: 5px solid #45a059; /* Adding a solid border around the content */
+            padding: 20px; /* Adding padding around the content */
+            box-sizing: border-box; /* Ensuring padding is included in the total width */
+    }
+        
+        .services-heading {
+            margin-bottom: 10px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two images per row */
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-grid img {
+            width: 100%; /* Make images fill their parent container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 400px; /* Limit maximum width of images */
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            .image-grid {
+                grid-template-columns: repeat(1, 1fr); /* Display one image per row on smaller screens */
+            }
+        }
+        body{
+            background-image: url('bg2.jpg'); /* Specify the URL of your image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed position */
+        }
+    </style>
+</head>
+<body>
+
+<div class="services-container">
+    <h2 class="services-heading">SERVICES</h2>
+
+    <div class="image-grid">
+        <a href="page1.html"><img src="basicaid.jpg" alt="Image 1">Basic Aid</a>
+        <a href="page2.html"><img src="bleeding.jpg" alt="Image 2">Bleeding</a>
+        <a href="page3.html"><img src="bonebreak.jpg" alt="Image 3">Bone Fracture</a>
+        <a href="page4.html"><img src="breathing.jpg" alt="Image 4">Breathing</a>
+        <a href="page5.html"><img src="firee.jpg" alt="Image 5">Burns</a>
+        <a href="page8.html"><img src="snake.jpg" alt="Image 8">Snake Bite</a>
+        <a href="page6.html"><img src="gunshot.jpg" alt="Image 6">GunShot</a>
+        <a href="page7.html"><img src="poisonous.jpg" alt="Image 7">Poisonous Plants</a>
+        
+        <a href="page9.html"><img src="swelling.jpg" alt="Image 9">Swelling</a>
+    </div>
+</div>
+
+</body>
+</html>
