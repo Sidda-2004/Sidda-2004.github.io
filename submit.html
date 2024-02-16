@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Style for icon container */
+        
+        .container {
+            position: absolute;
+            top: 50px; /* Adjust the top position as needed */
+            left: 50%; /* Align the container at the center horizontally */
+            transform: translateX(-50%); /* Adjust to center the container */
+            display: flex;
+           /* flex-direction: column;  Display icons vertically */
+            align-items: center; /* Center icons horizontally */
+            
+        }
+               
+        
+        h1{
+            font-size: 40px;
+            align-content: center;
+            color: #0f0e0e;
+            margin-top: 400px;
+            position: absolute;
+            background-color: aliceblue;
+            top: 90px; /* Adjust the top position as needed */
+            left: 50%; /* Align the container at the center horizontally */
+            transform: translateX(-50%);
+        }
+        .icon-link {
+            text-decoration: none;
+            color: #1a0404; /* Change color as desired */
+            margin: 40px; /* Adjust spacing between icons */
+        }
+        .icon-link:hover {
+            color: #de2b2149; /* Change color on hover as desired */
+        }
+        .icon-link i {
+            font-size: 76px; /* Adjust the font size of the icons */
+        }
+        /* Style for emergency button */
+        .emergency-button {
+            margin-top: 190px; /* Adjust margin as needed */
+            background-color: red;
+            color: rgb(233, 240, 236);
+            font-size: 134px;
+            border: none;
+            border-radius: 20%; /* Make the button round */
+            padding: 20px;
+            cursor: pointer;
+
+            position: absolute;
+            top: 90px; /* Adjust the top position as needed */
+            left: 50%; /* Align the container at the center horizontally */
+            transform: translateX(-50%); /* Adjust to center the container */
+            display: flex;
+           /* flex-direction: column;  Display icons vertically */
+            align-items: center; /* Center icons horizontally */
+        }
+        .emergency-button:hover {
+            background-color: darkred;
+        }
+        body{
+            background-image: url('bg.jpg'); /* Specify the URL of your image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed position */
+            backdrop-filter: blur(20px);
+        }
+        @media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
+       
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Icon links -->
+        <!--<a href="home.html" class="icon-link"><i class="fas fa-home"></i></a>
+        <a href="page2.html" class="icon-link"><i class="fas fa-user"></i></a>
+        <a href="setting.html" class="icon-link"><i class="fas fa-cog"></i></a>-->
+
+        <a href="home.html" class="icon-link"><i class="fas fa-hospital"></i> Services</a>
+        <a href="https://meet.google.com/stv-ujfw-fei " class="icon-link"><i class="fas fa-phone"></i> Call</a>
+        <a href="setting.html" class="icon-link"><i class="fas fa-cogs"></i> Settings</a>
+    </div>
+    <!-- Emergency button with icon -->
+    <button class="emergency-button"><i class="fas fa-exclamation-triangle"></i> </button>
+    <h1 class="h1" action="location.html">EMERGENCY CLICK</h1>
+
+
+<script>
+    document.querySelector('.h1').addEventListener('click', function() {
+        // Redirect to another page
+        window.location.href = 'location.html'; // Change 'location.html' to the desired destination page
+    });
+    // Add event listener to the emergency button
+    document.querySelector('.emergency-button').addEventListener('click', function() {
+        // Redirect to another page
+        window.location.href = 'location.html'; // Change 'location.html' to the desired destination page
+    });
+</script>
+</body>
+</html>
