@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Username</title>
+    <style>
+        /* Light theme styles */
+        .light-theme {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Dark theme styles */
+        .dark-theme {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        /* Other CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Center elements vertically */
+            background-image: url('bg.jpg'); /* Specify the URL of your image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* No repeating of the background image */
+            background-attachment: fixed; /* Fixed position */
+            backdrop-filter: blur(6px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            font-weight: bold;
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <h1>Change Username</h1>
+    <form id="changeUsernameForm">
+        <div class="form-group">
+            <label for="newUsername">New Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmNewUsername">Confirm New Username:</label>
+            <input type="text" id="confirmNewUsername" name="confirmNewUsername" required>
+        </div>
+        <button type="submit">Save Username</button>
+    </form>
+
+    <div class="success-message" id="successMessage"></div>
+
+    <script>
+        document.getElementById('changeUsernameForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var newUsername = document.getElementById('newUsername').value;
+            var confirmNewUsername = document.getElementById('confirmNewUsername').value;
+
+            if (newUsername === confirmNewUsername) {
+                // Perform validation and submit logic here
+
+                // Display success message
+                document.getElementById('successMessage').innerText = 'Username successfully changed to: ' + newUsername;
+            } else {
+                // Display error message
+                document.getElementById('successMessage').innerText = 'Error: New usernames do not match.';
+            }
+        });
+    </script>
+</body>
+</html>
